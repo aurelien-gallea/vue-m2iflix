@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# M2iflix
+## Projet sur 2 jours : objectif, s'entrainer avec vue js 3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Contient :
 
-## Recommended IDE Setup
+- un formulaire d'incription
+- un formulaire de connexion
+- une gallerie de films
+- une liste personnelle de films
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+NB: ce projet ne contient aucun système de hachage de mot de passe, si vous clonez ce projet merci de mettre en place une réelle sécurité.
