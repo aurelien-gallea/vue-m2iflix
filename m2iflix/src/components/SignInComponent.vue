@@ -34,7 +34,7 @@ const router = useRouter();
 const addPeople = (values, actions) => {
 	axios
 		.post(`${backEnd.URL}/personnes`, values)
-		.then(() => router.push("/films"))
+		.then(() => router.push("/"))
 		.catch((err) => console.log(err));
 };
 </script>

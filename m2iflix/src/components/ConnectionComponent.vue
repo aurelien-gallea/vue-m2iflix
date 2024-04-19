@@ -1,6 +1,5 @@
 <template>
-	
-	<Form class="">
+	<Form @submit="handleSubmit">
 		<div class="border rounded col-10 col-sm-8 col-md-6 col-lg-5 mx-auto pt-5">
 			<div class="d-flex justify-content-center gap-5">
 				<div class="d-flex flex-column gap-3">
@@ -13,7 +12,9 @@
 				</div>
 			</div>
 			<div class="d-flex justify-content-center gap-5 p-3">
-				<router-link to="/inscription" class="btn btn-secondary">Inscription</router-link>
+				<router-link to="/inscription" class="btn btn-secondary"
+					>Inscription</router-link
+				>
 				<button class="btn text-bg-success">Connexion</button>
 			</div>
 		</div>
@@ -21,7 +22,38 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import { Form, Field } from "vee-validate";
+import { useBackEnd } from "../stores/backEndstore.js";
+import axios from "axios";
+
+const backEnd = useBackEnd();
+const router = useRouter();
+
+const handleSubmit = (values) => {
+	
+	axios
+		.get(`${backEnd.URL}/personnes`)
+		.then((result) => {
+			const personne = result.data.find(
+				(p) => p.nom === values.nom && p.mdp === values.mdp
+			);
+            
+			if (personne) {
+                if (!personne.movies) {
+                    personne.movies = [];
+                }
+				const json = JSON.stringify(personne);
+				localStorage.setItem("user", json);
+				router.push("/films");
+                backEnd.connectionToggle();
+                
+			}
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+};
 </script>
 
 <style scoped></style>
