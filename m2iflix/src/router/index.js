@@ -1,10 +1,10 @@
 // fichier de mapping(route, composant)
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue"
-import FilmsView from "../views/FilmsView.vue";
 import ListeView from "../views/ListeView.vue";
 import InscriptionView from "../views/InscriptionView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
+import MoviesView from "../views/MoviesView.vue";
 const routes = [
 	{
 		path: "/",
@@ -15,7 +15,7 @@ const routes = [
 	},
 	{
         path: "/films",
-        component: FilmsView,
+        component: MoviesView,
         name: "films",
         meta: { title: "Films"}
     },

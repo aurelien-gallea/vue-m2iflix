@@ -1,12 +1,12 @@
 <template>
-    <h1>Connexion</h1>
-    
+    <h1 class="text-center my-5">Connexion</h1>
+    <ConnectionComponent></ConnectionComponent>
 </template>
 
 <script setup>
-
+import ConnectionComponent from '../components/ConnectionComponent.vue'
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
